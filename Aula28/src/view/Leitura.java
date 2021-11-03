@@ -2,11 +2,11 @@ package view;
 
 import java.io.*;
 
-public class Main {
+public class Leitura {
     public static void main(String[] args) {
-
+        //Try cath para tratamento.
         try {
-
+            //Fluxo de entrada:
             // Abrir entrada em bites:
             FileInputStream fis = new FileInputStream("src/dados/pratos.txt");
 //          System.out.println(fis.read());
