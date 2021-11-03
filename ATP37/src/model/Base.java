@@ -1,7 +1,7 @@
 package model;
 
 public abstract class Base {
-    int id;
+    public int id;
 }
 
 
