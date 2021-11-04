@@ -7,25 +7,24 @@ public class Escrita {
         //Fluxo de Saída:
 
         try {
-            InputStream fis = new FileInputStream("src/P2/dados/molhos.txt");
+            InputStream fis = System.in;
             Reader isr = new InputStreamReader(fis);
             BufferedReader br = new BufferedReader(isr);
 
-            OutputStream fos = new FileOutputStream("src/P2/dados/molhos2.txt");
+            OutputStream fos = new FileOutputStream("src/P2/dados/teclado.txt");
             Writer osw = new OutputStreamWriter(fos);
             BufferedWriter bw = new BufferedWriter(osw);
 
 
             // Ler até o final do arquivo:
-            while (br.ready()){
-                String linha = br.readLine();
+            String linha = br.readLine();
+            while (linha != null && !linha.equals("q")){
+                linha = br.readLine();
                 bw.write(linha+"\n");
             }
             //fechar o fluxo de leitura:
             bw.close();
             br.close();
-
-
 
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não encontrado.");
