@@ -2,12 +2,12 @@ package sistemasDados;
 
 import java.io.*;
 
-public class Leitura {
+public class LeituraeEscrita {
     public static void main(String[] args) {
             //Fluxo de Saída:
-
             try {
                 //lendo do teclado/ Terminal:
+                System.out.println("Escreva algo: \n");
                 InputStream fis = System.in;
                 Reader isr = new InputStreamReader(fis);
                 BufferedReader br = new BufferedReader(isr);
