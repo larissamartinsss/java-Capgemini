@@ -2,7 +2,7 @@ package P2.view;
 
 import java.io.*;
 
-public class Escrita {
+public class EscritaeLeitura {
     public static void main(String[] args) {
         //Fluxo de Saída:
 

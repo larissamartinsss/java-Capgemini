@@ -1,0 +1,6 @@
+"Hello world" in english.
+"Olá mundo" Em português
+"bonjour le monde" en français
+"Hallo Welt" auf Deutsch
+"Hallo Wereld" in het nederlands
+ 
