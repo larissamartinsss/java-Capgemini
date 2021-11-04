@@ -1,28 +1,21 @@
 package P3.view;
-
 import java.io.*;
+import java.util.Scanner;
 
 public class Leitura {
     public static void main(String[] args) {
-        try{
-            FileInputStream fis = new FileInputStream("src/P1/dados/pratos.txt");
+        // pode ser usado assim:
+//        File f = new File("src/P3/dados/molho.txt");
+//        Scanner sc = new Scanner(f);
+        //Ou assim:
 
-            InputStreamReader isr = new InputStreamReader(fis);
-
-            BufferedReader br = new BufferedReader(isr);
-            // Ler até o final do arquivo:
-            while (br.ready()){
-                String linha = br.readLine();
-                System.out.println(linha);
+        try {
+            Scanner sc = new Scanner(new File("src/P3/dados/molho.txt"));
+            while (sc.hasNextLine()){
+                System.out.println(sc.nextLine());
             }
-            br.close();
-            System.out.println("Arquivo aberto com sucesso!");
-
         } catch (FileNotFoundException e) {
-            System.out.println("Arquivo não encontrado");
-        }catch (IOException e){
-            System.out.println("Não foi possivel ler o arquivo.");
+            System.out.println("Arquivo não encontrado.");
         }
-
     }
 }
