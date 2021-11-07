@@ -1,6 +1,7 @@
 package controller;
 
 import dao.BaseDao;
+import dao.PessoaDao;
 
 import java.util.ArrayList;
 
@@ -8,9 +9,9 @@ public class BaseController<T> {
     private ArrayList<T> list;
     private BaseDao<T> dao;
 
-    public BaseController(String filename) {
+    public BaseController(PessoaDao filename) {
         this.list = new ArrayList<T>();
-        this.dao = new BaseDao<>(filename);
+        this.dao = dao;
     }
 
     public void create(T model){
@@ -28,9 +29,11 @@ public class BaseController<T> {
             this.delete(model);
             this.create(model);
         }
+        dao.update();
     }
 
     public void delete(T model){
         this.list.remove(model);
+        dao.remove(model);
     }
 }
