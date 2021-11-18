@@ -1,0 +1,5 @@
+package com.lariscode.lari.dao;
+
+public class ConnectionFactory {
+
+}
