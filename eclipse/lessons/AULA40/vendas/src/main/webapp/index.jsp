@@ -3,6 +3,7 @@
         <title>Categorias</title>
     </head>
 <body>
-<h2>Hello World!</h2>
+<a href="/categoria">Categoria</a> <br/>
+<a href="/Produto">Categoria</a>
 </body>
 </html>
