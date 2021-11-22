@@ -1,0 +1,4 @@
+com\lariscode\vendas\models\Produto.class
+com\lariscode\vendas\servlets\ProdutoServlet.class
+com\lariscode\vendas\servlets\CategoriaServlet.class
+com\lariscode\vendas\models\Categoria.class
