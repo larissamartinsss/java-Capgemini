@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/categoria")
-public class Categoria extends HttpServlet{  
+public class CategoriaServlet extends HttpServlet{  
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     // protocolo HTTP / HTTPS

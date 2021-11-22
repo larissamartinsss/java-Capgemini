@@ -1,6 +1,7 @@
-package com.lariscode.atp53.model;
+package com.lariscode.ATP53.model;
 
 public class Categoria {
+
     private int id;
     private String nome;
 

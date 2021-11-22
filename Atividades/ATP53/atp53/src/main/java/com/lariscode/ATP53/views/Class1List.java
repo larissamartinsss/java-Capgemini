@@ -1,8 +1,8 @@
-package com.lariscode.atp53.views;
+package com.lariscode.ATP53.views;
 
-import com.lariscode.atp53.dao.CategoriaDAO;
-import com.lariscode.atp53.model.Categoria;
-import com.lariscode.atp53.dao.ConnectionFactory;
+import com.lariscode.ATP53.dao.CategoriaDAO;
+import com.lariscode.ATP53.model.Categoria;
+import com.lariscode.ATP53.dao.ConnectionFactory;
 import java.sql.*;
 
 public class Class1List {

@@ -1,8 +1,14 @@
-package com.lariscode.atp53.dao;
+package com.lariscode.ATP53.dao;
 
-import com.lariscode.atp53.model.Categoria;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+
+import com.lariscode.ATP53.model.Categoria;
+
 
 public class CategoriaDAO {
     // Parei aqui: https://youtu.be/6X0KWhNM3-0?t=2210

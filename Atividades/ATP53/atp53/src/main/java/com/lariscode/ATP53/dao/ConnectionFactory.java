@@ -1,4 +1,4 @@
-package com.lariscode.atp53.dao;
+package com.lariscode.ATP53.dao;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import javax.sql.DataSource;

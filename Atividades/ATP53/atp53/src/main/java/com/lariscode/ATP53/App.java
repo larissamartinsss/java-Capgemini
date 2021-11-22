@@ -1,4 +1,4 @@
-package com.lariscode.atp53;
+package com.lariscode.ATP53;
 
 /**
  * Hello world!
