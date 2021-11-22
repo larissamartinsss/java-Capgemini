@@ -19,6 +19,13 @@
     <maven.compiler.target>15</maven.compiler.target>
   </properties>
 
+   <dependency>
+          <groupId>jakarta.servlet</groupId>
+          <artifactId>jakarta.servlet-api</artifactId>
+          <version>5.0.0</version>
+         <scope>provided</scope>
+   </dependency>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -40,7 +47,6 @@
       <artifactId>c3p0</artifactId>
       <version>0.9.5.5</version>
     </dependency>
-
 
 
   </dependencies>
