@@ -18,7 +18,7 @@ public class CategoriaServlet extends HttpServlet{
         Categoria cat1 = new Categoria();
 
         cat1.setNome(req.getParameter("nome"));
-        cat1.setDescricao(req.getParameter("nome"));
+        cat1.setDescricao(req.getParameter("descricao"));
 
         PrintWriter out = resp.getWriter();
         out.printf("Modulo Categoria -- cat = %s \nDescricao: %s", cat1.getNome(), cat1.getDescricao());

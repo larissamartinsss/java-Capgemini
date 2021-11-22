@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Cadastro de produtos</h1>
-    <form action="/vendas-1.0-SNAPSHOT/produto"></form>
+    <form action="/vendas-1/produto"></form>
     nome: <input type="text" name="nome" id="nome"><br/>
     valor: <input type="number" name="valor" id="valor"><br/>
     id categoria: <input type="number" name="id_categoria" id="id_categoria"><br/>
