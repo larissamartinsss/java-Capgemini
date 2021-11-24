@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CategoriaServlet extends HttpServlet{
     
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Categoria cat1 = new Categoria();
 
         cat1.setNome(req.getParameter("nome"));

@@ -16,7 +16,7 @@ public class ProdutoServlet extends HttpServlet{
     Produto prod1 = new Produto();
     
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         prod1.setNome(req.getParameter("nome"));
         String parametroValor = req.getParameter("valor"); 
         String parametroId = req.getParameter("id");       
