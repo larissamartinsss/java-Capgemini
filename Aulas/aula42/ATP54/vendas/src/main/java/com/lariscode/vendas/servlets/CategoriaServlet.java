@@ -2,6 +2,7 @@ package com.lariscode.vendas.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.lariscode.vendas.dao.CategoriaDao;
 import com.lariscode.vendas.models.Categoria;
 
 import jakarta.servlet.ServletException;
@@ -15,12 +16,15 @@ public class CategoriaServlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Categoria cat1 = new Categoria();
+        CategoriaDao dao = new CategoriaDao();
+        Categoria model = new Categoria();
 
-        cat1.setNome(req.getParameter("nome"));
-        cat1.setDescricao(req.getParameter("descricao"));
+        model.setNome(req.getParameter("nome"));
+        model.setDescricao(req.getParameter("descricao"));
+
+        dao.insert(model);
 
         PrintWriter out = resp.getWriter();
-        out.printf("Modulo Categoria -- cat = %s \nDescricao: %s", cat1.getNome(), cat1.getDescricao());
+        out.printf("Modulo Categoria -- cat = %s \nDescricao: %s", model.getNome(), model.getDescricao());
     }
 }
