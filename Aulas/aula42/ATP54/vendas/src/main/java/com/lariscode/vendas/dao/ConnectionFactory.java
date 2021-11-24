@@ -4,6 +4,8 @@ package com.lariscode.vendas.dao;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import javax.sql.DataSource;
+
+import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -17,12 +19,17 @@ public class ConnectionFactory {
 
     // Poll conexões
     public ConnectionFactory() {
-        ComboPooledDataSource poll = new ComboPooledDataSource();
-        poll.setJdbcUrl(this.connectionString);
-        poll.setUser(this.user);
-        poll.setPassword(this.pwd);
-        poll.setMaxPoolSize(50);
-        this.dataSource = poll;
+        ComboPooledDataSource pool = new ComboPooledDataSource();
+        try{
+        pool.setDriverClass("org.postgresql.Driver");
+        }catch(PropertyVetoException e) {
+            e.printStackTrace();
+        }
+        pool.setJdbcUrl(this.connectionString);
+        pool.setUser(this.user);
+        pool.setPassword(this.pwd);
+        pool.setMaxPoolSize(50);
+        this.dataSource = pool;
     }
 
     public Connection getConnection() throws SQLException {
