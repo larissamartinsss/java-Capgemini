@@ -1,29 +1,22 @@
 package com.lariscode;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
+import com.lariscode.dao.CategoriaDao;
 import com.lariscode.model.Categoria;
 public class App 
 {    public static void main( String[] args )
     {
-        System.out.println( "Sistema de Banco" );
+        // Parei aqui: https://youtu.be/qHhFd7F_MA8
+        CategoriaDao dao = new CategoriaDao();
         Categoria model = new Categoria();
-        model.setNome("Testes JPA");
-
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("banco");
-        EntityManager em = factory.createEntityManager(); // criando conexão com o banco
+        model.setId(4);
+        model.setNome("Testes JPA com dao - update");
         
-        em.getTransaction().begin();
-        em.persist(model);
-        em.getTransaction().commit();
+        dao.delete(4);
 
-        // lingugagem SQL:
-        List<Categoria> lista = em.createQuery("SELECT c FROM Categoria c", Categoria.class).getResultList();
+
         
-        for (Categoria categoria : lista) {
+        for (Categoria categoria : dao.read()) {
             System.out.printf("%d - %s\n", categoria.getId(), categoria.getNome());     
         }
      
