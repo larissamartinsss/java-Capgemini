@@ -1,17 +1,13 @@
 package com.lariscode;
+import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-/**
- * Hello world!
- *
- */
+import com.lariscode.model.Categoria;
 public class App 
-{
-    public static void main( String[] args )
+{    public static void main( String[] args )
     {
         System.out.println( "Sistema de Banco" );
         Categoria model = new Categoria();
@@ -19,11 +15,17 @@ public class App
 
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("banco");
         EntityManager em = factory.createEntityManager(); // criando conexão com o banco
+        
+        em.getTransaction().begin();
+        em.persist(model);
+        em.getTransaction().commit();
+
         // lingugagem SQL:
-        em.createQuery("SELECT c.nome FROM Categoria c", Categoria.class).getResultList();
+        List<Categoria> lista = em.createQuery("SELECT c FROM Categoria c", Categoria.class).getResultList();
         
-
-        
-
+        for (Categoria categoria : lista) {
+            System.out.printf("%d - %s\n", categoria.getId(), categoria.getNome());     
+        }
+     
     }
 }
