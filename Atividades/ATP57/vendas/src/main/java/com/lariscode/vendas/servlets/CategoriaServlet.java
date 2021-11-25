@@ -1,10 +1,8 @@
 package com.lariscode.vendas.servlets;
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import com.lariscode.vendas.dao.CategoriaDao;
 import com.lariscode.vendas.models.Categoria;
-
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,8 +22,14 @@ public class CategoriaServlet extends HttpServlet{
 
         model.setId(dao.insert(model));
 
-        PrintWriter out = resp.getWriter();
-        out.printf("Modulo Categoria -- Id gerado %d", model.getId());
+        req.setAttribute("id", model.getId());
+
+        RequestDispatcher rd = req.getRequestDispatcher("categoria-sucesso.jsp");
+        rd.forward(req, resp);
+
+
+        //PrintWriter out = resp.getWriter();
+        //out.printf("Categoria salva com sucesso XML -- Id gerado %d", model.getId());
         
     }
 }
