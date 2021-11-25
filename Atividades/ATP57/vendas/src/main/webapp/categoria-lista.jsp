@@ -1,3 +1,9 @@
+<%@ page import="java.util.ArrayList, com.lariscode.vendas.models.Categoria" %>
+
+<%
+    ArrayList<Categoria> categorias = (ArrayList<Categoria>)request.getAttribute("categorias");
+%>
+
 <!DOCTYPE html>
 <html lang="PT-br">
 <head>
@@ -16,6 +22,8 @@
             </tr>
         </thead>
         <tbody>
+
+            <% %>        
             <tr>
                 <td>1</td>
                 <td>Cat1</td>

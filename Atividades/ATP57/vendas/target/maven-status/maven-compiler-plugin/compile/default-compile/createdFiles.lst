@@ -1,7 +1,0 @@
-com\lariscode\vendas\servlets\CategoriaReadServlet.class
-com\lariscode\vendas\models\Produto.class
-com\lariscode\vendas\servlets\ProdutoServlet.class
-com\lariscode\vendas\servlets\CategoriaServlet.class
-com\lariscode\vendas\dao\ConnectionFactory.class
-com\lariscode\vendas\dao\CategoriaDao.class
-com\lariscode\vendas\models\Categoria.class
