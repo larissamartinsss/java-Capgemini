@@ -1,0 +1,7 @@
+com\lariscode\AppCategoria.class
+com\lariscode\dao\ConnectionFactory.class
+com\lariscode\model\ContaCorrente.class
+com\lariscode\AppConta.class
+com\lariscode\dao\CategoriaDao.class
+com\lariscode\dao\ContaCorrenteDao.class
+com\lariscode\model\Categoria.class
