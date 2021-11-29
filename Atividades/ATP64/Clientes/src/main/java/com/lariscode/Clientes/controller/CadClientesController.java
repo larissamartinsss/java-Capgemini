@@ -31,7 +31,7 @@ public class CadClientesController {
     public String formulario(Model req){
         CadClientes model = new CadClientes();
         req.addAttribute("cliente", model);
-        return "clientes-form";
+        return "cadcliente-form";
     }
 
     @PostMapping("/cliente/salvar")    
