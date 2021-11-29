@@ -1,5 +1,8 @@
 package com.lariscode.Clientes.repository;
+import com.lariscode.Clientes.model.CadClientes;
 
-public class CadClientesRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface CadClientesRepository extends CrudRepository<CadClientes, Integer> {
     
 }
