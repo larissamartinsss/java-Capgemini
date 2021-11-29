@@ -8,8 +8,32 @@
 </head>
 <body>
     <h1>Filmes</h1>
-    <p>Lista de filmes</p>
-
-    <h5 th:text="${nome}"></h5>
+    <h2>Lista de filmes</h2>
+    
+    <a href="/filme/form">Cadastrar novo</a>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Nome Diretor</th>
+                <th>Genero</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="f : ${filmes}">
+                <td th:text="${f.id}"></td>
+                <td th:text="${f.nome}"></td>
+                <td th:text="${f.nomeDiretor}"></td>
+                <td th:text="${f.genero}"></td>
+                <td>
+                    <a th:href="@{'/filme/editar/'+${f.id}}">Editar</a> |
+                    <a th:href="@{'/filme/deletar/'+${f.id}}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
