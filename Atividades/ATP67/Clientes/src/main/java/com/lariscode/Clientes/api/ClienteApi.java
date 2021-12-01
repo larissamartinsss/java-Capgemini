@@ -12,32 +12,34 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/cliente")
 public class ClienteApi {
 @Autowired
 private CadClientesRepository repository;
 
-@GetMapping("/api/cliente")
+@GetMapping
 public List<CadClientes> clientes(){
     List<CadClientes> lista = (List<CadClientes>)repository.findAll();
     return lista; 
 }
 
-@PostMapping("/api/cliente")    
+@PostMapping    
 public String salvar(@RequestBody CadClientes model){
     repository.save(model);
     return "salvo com sucesso";
 }
 
-@DeleteMapping("/api/cliente/{id}")    
+@DeleteMapping("/{id}")    
 public String deletar(@PathVariable int id){
     repository.deleteById(id);
     return "deletado com sucesso";
 }
 
-@PutMapping("/api/cliente/{id}")    
+@PutMapping("/{id}")    
 public String update(@RequestBody CadClientes model, @PathVariable int id){
     if(model.getId() == id){
         repository.save(model);
