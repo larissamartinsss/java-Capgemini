@@ -22,9 +22,11 @@ public class ClienteApi {
 private CadClientesRepository repository;
 
 @GetMapping
-public List<CadClientes> clientes(){
-    List<CadClientes> lista = (List<CadClientes>)repository.findAll();
-    return lista; 
+public List<CadClientes> clientes(String nome){
+    if(nome != null){
+    return (List<CadClientes>)repository.findByNome(nome);
+    }
+    return (List<CadClientes>)repository.findAll();
 }
 
 @PostMapping    
